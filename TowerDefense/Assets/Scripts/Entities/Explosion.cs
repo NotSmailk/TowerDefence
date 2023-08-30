@@ -7,7 +7,6 @@ public class Explosion : WarEntity
     [field: SerializeField, Range(0f, 1f)] private float _duration = 0.5f;
 
     private float _age;
-    private static MaterialPropertyBlock _propertyBlock;
 
     public void Initialize(Vector3 position, float blastRadius, float damage = 0f)
     {
@@ -30,11 +29,6 @@ public class Explosion : WarEntity
         {
             Recycle();
             return false;
-        }
-
-        if (_propertyBlock == null)
-        {
-            _propertyBlock = new MaterialPropertyBlock();
         }
 
         return true;
